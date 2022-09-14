@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flag quiz</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <section class="home displayed">
+                <h1>Take a flag quiz!</h1>
+                <form action="#">
+                    <p>Select difficulty:</p>
+                    <label class="option">
+                        <input type="radio" name="difficulty" id="easy" value="easy" checked>
+                        <img src="./icons/japan.png" alt="Japan flag as a radio button">
+                        <label for="easy">Easy</label>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="difficulty" id="medium" value="medium">
+                        <img src="./icons/singapore.png" alt="Singapore flag as a radio button">
+                        <label for="medium">Medium</label>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="difficulty" id="hard" value="hard">
+                        <img src="./icons/taiwan.png" alt="Taiwan flag as a radio button">
+                        <label for="hard">Hard</label>
+                    </label>
+                </form>
+                <form action="#">
+                    <span>Select number of questions:</span>
+                    <select name="num-questions" id="num-questions">
+                        <option value="10">10</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                </form>
+                <button onclick="startQuiz()">Start quiz</button>
+            </section>
+            <section class="quiz not-displayed">
+                <h1>Guess the flag!</h1>
+                <div class="stats">
+                    <span id="questions"></span>
+                    <span id="correct"></span>
+                    <span id="return" onclick="restartQuiz()">Quit the quiz</span>
+                </div>
+                <img src="" alt="Current flag to guess" id="guessing-flag">
+                <div class="answers">
+                    <div>
+                        <span>a)</span><p class="answer" onclick="checkAnswer(0)"></p>
+                    </div>
+                    <div>
+                        <span>b)</span><p class="answer" onclick="checkAnswer(1)"></p>
+                    </div>
+                    <div>
+                        <span>c)</span><p class="answer" onclick="checkAnswer(2)"></p>
+                    </div>
+                </div>
+            </section>
+            <section class="result not-displayed">
+                <h1 id="result-display"></h1>
+                <p>You can return to homepage and take the quiz again.</p>
+                <button onclick="restartQuiz()">Try again</button>
+            </section>
+        </main>
+    </body>
+</html>
