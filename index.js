@@ -37,9 +37,18 @@ function makeQuestion(difficulty) {
             if (!tempCountries.includes(correctAnswer)) {
                 for (let i = 0; i < 3; i++) {
                     if (correctAnsPosition == i) { 
-                        answersArray.push(correctAnswer)
+                        if (!answersArray.includes(correctAnswer)) {
+                            answersArray.push(correctAnswer)
+                        } else {
+                            answersArray.push(randomCountry(easyCountries))
+                        }
                     } else {
-                        answersArray.push(randomCountry(easyCountries))
+                        let country = randomCountry(easyCountries)
+                        if (!answersArray.includes(country)) {
+                            answersArray.push(country)
+                        } else {
+                            answersArray.push(randomCountry(easyCountries))
+                        }
                     }
                 }
                 temp++
@@ -51,9 +60,18 @@ function makeQuestion(difficulty) {
             if (!tempCountries.includes(correctAnswer)) {
                 for (let i = 0; i < 3; i++) {
                     if (correctAnsPosition == i) { 
-                        answersArray.push(correctAnswer)
+                        if (!answersArray.includes(correctAnswer)) {
+                            answersArray.push(correctAnswer)
+                        } else {
+                            answersArray.push(randomCountry(mediumCountries))
+                        }
                     } else {
-                        answersArray.push(randomCountry(mediumCountries))
+                        let country = randomCountry(mediumCountries)
+                        if (!answersArray.includes(country)) {
+                            answersArray.push(country)
+                        } else {
+                            answersArray.push(randomCountry(mediumCountries))
+                        }
                     }
                 }
                 temp++
@@ -65,9 +83,18 @@ function makeQuestion(difficulty) {
             if (!tempCountries.includes(correctAnswer)) {
                 for (let i = 0; i < 3; i++) {
                     if (correctAnsPosition == i) { 
-                        answersArray.push(correctAnswer)
+                        if (!answersArray.includes(correctAnswer)) {
+                            answersArray.push(correctAnswer)
+                        } else {
+                            answersArray.push(randomCountry(hardCountries))
+                        }
                     } else {
-                        answersArray.push(randomCountry(hardCountries))
+                        let country = randomCountry(hardCountries)
+                        if (!answersArray.includes(country)) {
+                            answersArray.push(country)
+                        } else {
+                            answersArray.push(randomCountry(hardCountries))
+                        }
                     }
                 }
                 temp++
